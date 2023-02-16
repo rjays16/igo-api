@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use App\Enums\SystemMessage;
+use App\Enums\HttpStatusCode;
+
+class StoreStateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            "state" => "required|max:5",
+            "name" => "required|max:50",
+            "description" => "required|max:50",
+        ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+		    'data'      => $validator->errors(),
+            'message'   => SystemMessage::ValidationError,
+            'success'   => false   
+        ], 
+        HttpStatusCode::StateErrorBadRequest));
+    }
+}
