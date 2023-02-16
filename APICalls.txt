@@ -1,0 +1,126 @@
+http://gotb2022-api.test/api/v1/client?per_page=10&
+
+http://igotb2022-api.test/api/v1/client?per_page=10&
+
+Filter parameters:
+you can apply any combination of these filters
+
+per_page
+
+filter_id
+filter_first_name
+filter_last_name
+filter_gender
+filter_date_of_birth
+filter_email
+filter_phone
+filter_organization
+filter_address1
+filter_address2
+filter_city
+filter_state
+filter_zip
+filter_client_type
+filter_ca_date
+filter_tag
+filter_note
+filter_created_at
+
+Sorting parameters:
+0 means sort disabled | 1 means Ascending | 2 means Descending
+you can apply any combination of these sorting parameters
+
+
+sort_id=1
+sort_first_name
+sort_last_name
+sort_gender
+sort_date_of_birth
+sort_email
+sort_phone
+sort_organization
+sort_address1
+sort_address2
+sort_city
+sort_state
+sort_zip
+sort_client_type
+sort_ca_date
+sort_tag
+sort_note
+sort_created_at
+
+You can apply any combination of filters + sorting to generate the desired output.
+
+Example API Calls:
+
+scenario1:
+pagesize by 10 with firstname filter and sorted by firstname ascending
+
+
+here's the corresponding API Call (sort firstname ascending)
+
+http://beta-api-igo.talentbuilders.org/api/v1/client?per_page=10&filter_first_name=Alan&sort_first_name=1
+
+
+API Call (sort firstname Descending)
+http://beta-api-igo.talentbuilders.org/api/v1/client?per_page=10&filter_first_name=Alan&sort_first_name=2
+
+
+Scenario2:
+pagesize by 20 with filter of firstname and lastname and sorted/order by lastname ascending
+
+here's the corresponding API Call for that (sorted by last name ascending)
+
+http://beta-api-igo.talentbuilders.org/api/v1/client?per_page=20&filter_first_name=Alan&sort_last_name=1
+
+
+here's the corresponding API Call for that (sorted by last name descending)
+
+http://beta-api-igo.talentbuilders.org/api/v1/client?per_page=20&filter_first_name=Alan&sort_last_name=2
+
+
+
+Accounts CRUD
+
+Filters + Sorting 
+
+URL:
+http://beta-api-igo.talentbuilders.org/api/v1/account?per_page=10
+
+per_page = 10 -  sets the page size (required)
+
+Filters
+you can apply any combination of these filters same principle as that of Clients CRUD
+
+filter_allcolumn
+filter_id
+filter_client_id
+filter_status
+filter_creditor_id
+filter_acct_description
+filter_acct_number
+filter_debtor_id
+filter_rate
+filter_note
+filter_origin_date
+filter_tag
+filter_created_at
+
+Sort Fields
+Sorting parameters:
+0 means sort disabled | 1 means Ascending | 2 means Descending
+you can apply any combination of these sorting parameters
+
+sort_id
+sort_client_id
+sort_status
+sort_creditor_id
+sort_acct_description
+sort_acct_number
+sort_debtor_id
+sort_rate
+sort_note
+sort_origin_date
+sort_tag
+sort_created_at
